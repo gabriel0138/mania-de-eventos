@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mania de Eventos - Apresentação 2026</title>
+    <!-- Tailwind CSS (Framework de Estilos) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        html { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased overflow-x-hidden">
+
+    <!-- HEADER / NAVBAR -->
+    <header id="navbar" class="fixed w-full z-50 transition-all duration-300 bg-slate-900 py-5">
+        <div class="container mx-auto px-4 md:px-8 flex justify-end items-center relative">
+            
+            <!-- Logo Centralizado (Absoluto) -->
+            <div class="absolute left-1/2 top-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer" onclick="scrollToSection('home')">
+                <img src="logo_retangular.png" alt="Mania de Eventos" class="h-10 md:h-14 w-auto object-contain transition-all duration-300">
+            </div>
+
+            <!-- Menu Desktop -->
+            <nav class="hidden md:flex gap-8 font-medium items-center">
+                <button onclick="scrollToSection('sobre')" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">Sobre</button>
+                <button onclick="scrollToSection('diversidade')" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">Diversidade</button>
+                <button onclick="scrollToSection('atuacao')" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">Atuação</button>
+                <button onclick="scrollToSection('idealizadora')" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">Idealizadora</button>
+                <button onclick="scrollToSection('contato')" class="bg-red-600 text-white px-5 py-2 rounded-full hover:bg-red-700 transition-colors shadow-lg">Contato</button>
+            </nav>
+
+            <!-- Botão Mobile -->
+            <button id="mobile-btn" class="md:hidden text-white transition-colors duration-300 text-2xl" onclick="toggleMenu()">
+                <i class="fa-solid fa-bars" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Menu Mobile (Escondido por padrão) -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-xl py-4 px-4 flex-col gap-4 md:hidden border-t border-slate-100">
+            <button onclick="scrollToSection('sobre')" class="text-left py-3 text-slate-800 font-medium border-b border-slate-100 w-full">Sobre</button>
+            <button onclick="scrollToSection('diversidade')" class="text-left py-3 text-slate-800 font-medium border-b border-slate-100 w-full">Diversidade</button>
+            <button onclick="scrollToSection('atuacao')" class="text-left py-3 text-slate-800 font-medium border-b border-slate-100 w-full">Como Atuamos</button>
+            <button onclick="scrollToSection('idealizadora')" class="text-left py-3 text-slate-800 font-medium border-b border-slate-100 w-full">Idealizadora</button>
+            <button onclick="scrollToSection('contato')" class="text-left py-3 text-red-600 font-bold w-full">Contato</button>
+        </div>
+    </header>
+
+    <!-- PÁGINA 1: CAPA -->
+    <section id="home" class="h-screen flex items-center justify-center bg-slate-900 text-center px-4 pt-20 relative">
+        <div class="absolute inset-0 bg-[url('grande_foto_equipe.png')] bg-cover bg-center opacity-20"></div>
+        <div class="relative z-10">
+            <img src="logo_retangular.png" alt="Mania de Eventos" class="mx-auto w-[90%] md:w-[60%] lg:w-[50%] h-auto mb-8 drop-shadow-lg">
+            <div class="w-32 h-1.5 bg-red-600 mx-auto mb-8 rounded-full shadow-[0_0_15px_rgba(220,38,38,0.5)]"></div>
+            <p class="text-2xl md:text-3xl text-slate-300 font-light mb-4 uppercase tracking-widest drop-shadow-md">
+                Apresentação Comercial
+            </p>
+            <p class="text-5xl text-red-500 font-black drop-shadow-md">2026</p>
+        </div>
+    </section>
+
+    <!-- PÁGINA 2: SOBRE A GENTE -->
+    <section id="sobre" class="py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center gap-12">
+            <div class="md:w-1/2 relative">
+                <div class="absolute -top-4 -left-4 w-24 h-24 bg-red-100 rounded-tl-3xl z-0"></div>
+                <div class="absolute -bottom-4 -right-4 w-24 h-24 bg-slate-100 rounded-br-3xl z-0"></div>
+                <img src="foto_da_equipe.png" alt="Equipe Mania de Eventos" class="relative z-10 rounded-2xl shadow-xl w-full h-[500px] object-cover hover:shadow-2xl transition-shadow duration-300"/>
+            </div>
+            <div class="md:w-1/2">
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-8 uppercase tracking-tight">Sobre a gente</h2>
+                <div class="space-y-6 text-lg text-slate-600 leading-relaxed">
+                    <p>Desde 2007, atuamos na criação e execução de eventos corporativos em todo o Brasil. Unimos planejamento, operação e sensibilidade para criar experiências relevantes, bem executadas e humanas.</p>
+                    <p>Vemos eventos como canais de encontro, expressão e pertencimento. Cada projeto nasce da leitura do público, do contexto e do momento que só fazem sentido quando conversam com o agora!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 3: DIVERSIDADE -->
+    <section id="diversidade" class="py-24 bg-slate-900 text-white relative">
+        <div class="absolute top-0 right-0 w-1/2 h-full opacity-5 pointer-events-none bg-[url('foto_equipe_tudum.png')] bg-cover bg-right"></div>
+        <div class="container mx-auto px-4 md:px-8 relative z-10">
+            <div class="flex flex-col-reverse md:flex-row items-center gap-12">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl md:text-5xl font-black mb-8 leading-tight">
+                        DIVERSIDADE NÃO É DISCURSO.<br/>
+                        <span class="text-red-500">É PRÁTICA.</span>
+                    </h2>
+                    <div class="space-y-6 text-xl text-slate-300 leading-relaxed font-light">
+                        <p>Somos pioneiros na contratação de Pessoas Com Deficiência e na construção de um casting plural, que reflete o Brasil real: em corpos e vivências.</p>
+                        <p>Acreditamos que experiências mais ricas nascem de olhares diversos.</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2">
+                    <img src="foto_equipe_tudum.png" alt="Equipe no evento Tudum" class="rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] w-full h-[500px] object-cover"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 4: COMO ATUAMOS -->
+    <section id="atuacao" class="py-24 bg-slate-50">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-4 uppercase tracking-tight">Como Atuamos</h2>
+                <div class="w-20 h-2 bg-red-600 mx-auto rounded-full"></div>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12">
+                <div class="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Pessoas -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <h3 class="text-2xl font-bold text-red-600 mb-4 border-b border-slate-100 pb-3 flex items-center gap-3"><i class="fa-solid fa-users"></i> Pessoas</h3>
+                        <ul class="space-y-3 text-slate-700 font-medium">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red-500"></i>Recepcionistas</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red-500"></i>Promotores</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red-500"></i>Produtores</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red-500"></i>Atores</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red-500"></i>Personagens</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red-500"></i>Copeiras</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red-500"></i>Seguranças</li>
+                        </ul>
+                    </div>
+
+                    <!-- Experiências -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                        <h3 class="text-2xl font-bold text-red-600 mb-4 border-b border-slate-100 pb-3 flex items-center gap-3"><i class="fa-solid fa-star"></i> Experiências</h3>
+                        <ul class="space-y-3 text-slate-700 font-medium">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red-500"></i>Ativações</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red-500"></i>Interação</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red-500"></i>Buffet e Bar</li>
+                        </ul>
+                    </div>
+
+                    <!-- Operação -->
+                    <div class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 md:col-span-2 hover:shadow-md transition-shadow">
+                        <h3 class="text-2xl font-bold text-red-600 mb-4 border-b border-slate-100 pb-3 flex items-center gap-3"><i class="fa-solid fa-gear"></i> Operação</h3>
+                        <ul class="grid grid-cols-1 sm:grid-cols-2 gap-4 text-slate-700 font-medium">
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red-500"></i>Credenciamento</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red-500"></i>Logística</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red-500"></i>Chapelaria</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red-500"></i>Controle</li>
+                            <li class="flex items-center gap-3"><i class="fa-solid fa-check text-red-500"></i>Equipamento Audiovisual</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="lg:w-1/2">
+                    <img src="foto_equipe_zurich.png" alt="Equipe na Zurich" class="rounded-2xl shadow-xl w-full h-full object-cover min-h-[400px]"/>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 5: BRINDES E MANUSEIOS -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2 grid grid-cols-2 gap-4">
+                    <div class="overflow-hidden rounded-xl shadow-md"><img src="Foto_brinde1.png" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500" alt="Brinde 1" /></div>
+                    <div class="overflow-hidden rounded-xl shadow-md"><img src="Foto_brinde2.png" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500" alt="Brinde 2" /></div>
+                    <div class="overflow-hidden rounded-xl shadow-md"><img src="Foto_brinde3.png" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500" alt="Brinde 3" /></div>
+                    <div class="overflow-hidden rounded-xl shadow-md"><img src="Foto_brinde4.jpg" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500" alt="Brinde 4" /></div>
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl font-black text-slate-900 mb-6 uppercase tracking-tight">Brindes e Manuseios</h2>
+                    <h3 class="text-2xl text-red-600 font-bold mb-6">Da ideia à entrega.</h3>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        Atuamos na criação, produção, confecção, manuseio e logística de brindes, cuidando de cada detalhe para que a experiência da marca chegue ao público do jeito certo.
+                    </p>
+                    <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-red-600 shadow-sm">
+                        <p class="text-slate-700 font-medium italic">
+                            * Caso você já tenha os brindes, e precise do manuseio e logística, pode contar com nossos serviços também!
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 6: CHAPELARIA -->
+    <section class="py-24 bg-slate-900 text-white relative overflow-hidden flex items-center justify-center min-h-[60vh]">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-red-600 rounded-full blur-[150px] opacity-20"></div>
+        <div class="container mx-auto px-4 md:px-8 text-center max-w-4xl relative z-10">
+            <h2 class="text-4xl md:text-5xl font-black mb-8 uppercase tracking-widest"><i class="fa-solid fa-shield-halved text-red-600 mr-4"></i>Chapelaria</h2>
+            <p class="text-2xl font-bold text-red-500 mb-8">Organização invisível para uma experiência fluida e segura.</p>
+            <p class="text-xl text-slate-300 mb-12 font-light leading-relaxed">
+                Sistema prático e controlado, com pertences numerados e gestão digital de entrada e saída, sem interferir na vivência do público.
+            </p>
+            <div class="bg-white/5 p-6 rounded-xl inline-block text-left mb-12 border border-white/10 backdrop-blur-md shadow-lg">
+                <p class="text-lg flex items-start gap-3">
+                    <i class="fa-solid fa-circle-info text-red-500 mt-1"></i>
+                    <span>Conte com o nosso sistema de lista online para controle de entrada e saída, sem necessidade de uso de pulseiras.</span>
+                </p>
+            </div>
+            <div>
+                <a href="https://wa.me/5511997910117" target="_blank" class="bg-red-600 text-white font-bold py-4 px-8 rounded-full hover:bg-red-700 transition-colors inline-flex items-center gap-2 shadow-lg hover:shadow-red-600/50">
+                    CONHEÇA MAIS CLICANDO AQUI <i class="fa-solid fa-chevron-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 7: PERSONAGENS E MASCOTES -->
+    <section class="py-24 bg-white">
+        <div class="container mx-auto px-4 md:px-8">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2">
+                    <h2 class="text-4xl md:text-5xl font-black text-slate-900 mb-6 uppercase tracking-tight">Personagens e Mascotes</h2>
+                    <p class="text-2xl text-red-600 font-bold mb-6">Interação, carisma e encantamento.</p>
+                    <p class="text-lg text-slate-600 mb-10 leading-relaxed">
+                        Trabalhamos com profissionais treinados, figurinos de alta qualidade e atendimento personalizado para criar experiências lúdicas, seguras e memoráveis.
+                    </p>
+                    <a href="https://wa.me/5511997910117" target="_blank" class="bg-red-600 text-white font-bold py-4 px-8 rounded-full hover:bg-red-700 transition-colors inline-flex items-center gap-2 shadow-lg">
+                        CONHEÇA MAIS CLICANDO AQUI <i class="fa-solid fa-chevron-right"></i>
+                    </a>
+                </div>
+                <div class="md:w-1/2 grid grid-cols-2 gap-4 h-[500px]">
+                    <div class="col-span-1 row-span-2 overflow-hidden rounded-xl shadow-lg">
+                        <img src="foto_mascote.png" class="w-full h-full object-cover hover:scale-105 transition-transform duration-500" alt="Mascote 1" />
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-md">
+                        <img src="foto_mascote2.png" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Mascote 2" />
+                    </div>
+                    <div class="overflow-hidden rounded-xl shadow-md">
+                        <img src="foto_mascote3.png" class="w-full h-full object-cover hover:scale-110 transition-transform duration-500" alt="Mascote 3" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 9 e 10: MANIA DE EVENTOS (VALORES E GALERIA) -->
+    <section class="py-24 bg-red-600 text-white">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <img src="grande_foto_equipe.png" alt="Equipe Completa" class="rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.4)] w-full h-[500px] object-cover mb-16" />
+            
+            <h2 class="text-4xl md:text-5xl font-black mb-12 uppercase tracking-widest drop-shadow-md">Mania de Eventos</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto font-bold text-xl md:text-2xl leading-tight">
+                <div class="bg-red-700/60 p-8 rounded-2xl shadow-inner border border-red-500/30 flex items-center justify-center text-center hover:bg-red-700 transition-colors">
+                    RESPONSABILIDADE, RESPEITO, EMPATIA E INCLUSÃO.
+                </div>
+                <div class="bg-red-700/60 p-8 rounded-2xl shadow-inner border border-red-500/30 flex items-center justify-center text-center hover:bg-red-700 transition-colors">
+                    CRIATIVIDADE E INOVAÇÃO PARA SEMPRE SURPREENDER
+                </div>
+                <div class="bg-red-700/60 p-8 rounded-2xl shadow-inner border border-red-500/30 flex items-center justify-center text-center hover:bg-red-700 transition-colors">
+                    ATENDIMENTO PERSONALIZADO E HUMANIZADO.
+                </div>
+            </div>
+
+            <!-- Fotos da Página 10 -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mt-16">
+                <div class="overflow-hidden rounded-xl shadow-lg"><img src="foto_pagina10_1.png" class="w-full h-56 object-cover hover:scale-110 transition-transform duration-500" alt="Galeria 1" /></div>
+                <div class="overflow-hidden rounded-xl shadow-lg"><img src="foto_pagina10_2.png" class="w-full h-56 object-cover hover:scale-110 transition-transform duration-500" alt="Galeria 2" /></div>
+                <div class="overflow-hidden rounded-xl shadow-lg"><img src="foto_pagina10_3.png" class="w-full h-56 object-cover hover:scale-110 transition-transform duration-500" alt="Galeria 3" /></div>
+                <div class="overflow-hidden rounded-xl shadow-lg"><img src="foto_pagina10_4.png" class="w-full h-56 object-cover hover:scale-110 transition-transform duration-500" alt="Galeria 4" /></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 11: IDEALIZADORA -->
+    <section id="idealizadora" class="py-24 bg-slate-50 relative overflow-hidden">
+        <div class="container mx-auto px-4 md:px-8 flex flex-col md:flex-row items-center justify-center gap-16 relative z-10">
+            <div class="md:w-1/3">
+                <img src="foto_juliana_costa.png" alt="Juliana Costa" class="rounded-full md:rounded-2xl shadow-2xl w-64 h-64 md:w-full md:h-[500px] object-cover border-8 border-white mx-auto"/>
+            </div>
+            <div class="md:w-1/2 text-center md:text-left">
+                <h3 class="text-xl font-bold text-red-600 mb-2 uppercase tracking-widest"><i class="fa-solid fa-quote-left mr-2"></i>Idealizadora</h3>
+                <h2 class="text-4xl md:text-6xl font-black text-slate-900 mb-8 uppercase tracking-tight">Juliana Costa</h2>
+                
+                <div class="space-y-6 text-xl text-slate-600 leading-relaxed font-light">
+                    <p>Há <strong class="text-slate-900">26 anos</strong> atuando na área de eventos e adquirindo conhecimento em todos os setores que envolvem uma grande produção.</p>
+                    <p>Apaixonada por defender causas sociais que envolvem minorias, criou a maior produtora de eventos com diversidade do Brasil.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 8: CLIENTES -->
+    <section id="clientes" class="py-24 bg-white border-t border-slate-100">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <h2 class="text-3xl md:text-4xl font-black text-slate-900 mb-16 uppercase tracking-tight">Alguns de nossos clientes</h2>
+            
+            <div class="flex flex-wrap justify-center items-center gap-x-12 gap-y-10 max-w-5xl mx-auto text-slate-400 opacity-80">
+                <h3 class="text-2xl font-black text-slate-800">SMASH!</h3>
+                <h3 class="text-3xl font-light tracking-widest uppercase text-slate-800">MCI</h3>
+                <div class="text-xl font-bold leading-tight text-slate-800">BEMO<br/><span class="text-xs font-normal">EVENTOS+PROMO</span></div>
+                <h3 class="text-3xl font-serif italic text-blue-900 font-bold">ZURICH</h3>
+                <h3 class="text-2xl font-bold uppercase text-blue-800 border-b-4 border-blue-800 pb-1">Anglo</h3>
+                <div class="text-lg leading-tight font-bold text-slate-800 text-left">Machado<br/>Meyer<br/><span class="text-xs font-light">ADVOGADOS</span></div>
+                <h3 class="text-2xl font-bold text-red-600 uppercase">Santander</h3>
+                <h3 class="text-xl font-bold uppercase tracking-widest text-slate-800">Mattos Filho</h3>
+                <h3 class="text-2xl font-black text-blue-600 italic">OMRON</h3>
+                <h3 class="text-xl font-bold uppercase text-slate-800">Farol</h3>
+                <h3 class="text-2xl font-bold tracking-tighter lowercase text-slate-800">eletromidia</h3>
+            </div>
+        </div>
+    </section>
+
+    <!-- PÁGINA 12: CONTATO / FOOTER -->
+    <footer id="contato" class="bg-slate-950 text-white py-16 border-t-[10px] border-red-600">
+        <div class="container mx-auto px-4 md:px-8 text-center">
+            <h2 class="text-4xl md:text-5xl font-black mb-12 uppercase tracking-tighter drop-shadow-md">
+                <span class="text-red-600">MANIA</span> DE EVENTOS
+            </h2>
+            
+            <div class="flex flex-col items-center gap-6 text-xl font-medium mb-12">
+                <a href="https://wa.me/5511997910117" target="_blank" class="flex items-center gap-4 hover:text-red-500 transition-colors bg-white/5 py-3 px-6 rounded-full w-full max-w-md justify-center border border-white/10 hover:border-red-500/50">
+                    <i class="fa-brands fa-whatsapp text-red-500 text-2xl"></i> (11) 99791-0117
+                </a>
+                <a href="mailto:julianacosta@maniadeeventos.com.br" class="flex items-center gap-4 hover:text-red-500 transition-colors bg-white/5 py-3 px-6 rounded-full w-full max-w-md justify-center border border-white/10 hover:border-red-500/50 break-all text-sm md:text-lg">
+                    <i class="fa-solid fa-envelope text-red-500 text-xl"></i> JULIANACOSTA@MANIADEEVENTOS.COM.BR
+                </a>
+                <a href="https://instagram.com/maniadeeventos" target="_blank" class="flex items-center gap-4 hover:text-red-500 transition-colors bg-white/5 py-3 px-6 rounded-full w-full max-w-md justify-center border border-white/10 hover:border-red-500/50">
+                    <i class="fa-brands fa-instagram text-red-500 text-2xl"></i> @MANIADEEVENTOS
+                </a>
+                <a href="https://maniadeeventos.com.br" target="_blank" class="flex items-center gap-4 hover:text-red-500 transition-colors bg-white/5 py-3 px-6 rounded-full w-full max-w-md justify-center border border-white/10 hover:border-red-500/50">
+                    <i class="fa-solid fa-globe text-red-500 text-xl"></i> MANIADEEVENTOS.COM.BR
+                </a>
+            </div>
+
+            <div class="pt-8 border-t border-white/10 text-slate-500 text-sm">
+                <p>&copy; 2026 Mania de Eventos. Apresentação Comercial.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Interação (Menu e Scroll) -->
+    <script>
+        // Lógica para mudar a cor do menu ao rolar a página
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('navbar');
+            const mobileBtn = document.getElementById('mobile-btn');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            if (window.scrollY > 50) {
+                header.classList.add('bg-white', 'shadow-md', 'py-3');
+                header.classList.remove('bg-slate-900', 'py-5');
+                mobileBtn.classList.replace('text-white', 'text-slate-900');
+                navLinks.forEach(l => {
+                    l.classList.replace('text-slate-300', 'text-slate-600');
+                    l.classList.replace('hover:text-white', 'hover:text-red-600');
+                });
+            } else {
+                header.classList.add('bg-slate-900', 'py-5');
+                header.classList.remove('bg-white', 'shadow-md', 'py-3');
+                mobileBtn.classList.replace('text-slate-900', 'text-white');
+                navLinks.forEach(l => {
+                    l.classList.replace('text-slate-600', 'text-slate-300');
+                    l.classList.replace('hover:text-red-600', 'hover:text-white');
+                });
+            }
+        });
+
+        // Lógica para abrir/fechar menu no celular
+        function toggleMenu() {
+            const menu = document.getElementById('mobile-menu');
+            const icon = document.getElementById('menu-icon');
+            menu.classList.toggle('hidden');
+            menu.classList.toggle('flex');
+            
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-xmark');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-xmark');
+            }
+        }
+
+        // Lógica para rolar suavemente até a seção
+        function scrollToSection(id) {
+            document.getElementById(id).scrollIntoView({ behavior: 'smooth' });
+            
+            // Fecha o menu mobile se estiver aberto
+            const menu = document.getElementById('mobile-menu');
+            if (!menu.classList.contains('hidden')) {
+                toggleMenu();
+            }
+        }
+    </script>
+</body>
+</html>
