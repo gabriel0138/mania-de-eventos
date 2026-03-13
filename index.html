@@ -27,27 +27,35 @@
             </div>
 
             <!-- Menu Desktop -->
-            <nav class="hidden md:flex gap-8 font-medium items-center">
+            <nav class="hidden lg:flex gap-4 xl:gap-6 font-medium items-center text-sm">
                 <button onclick="scrollToSection('sobre')" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">Sobre</button>
                 <button onclick="scrollToSection('diversidade')" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">Diversidade</button>
                 <button onclick="scrollToSection('atuacao')" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">Atuação</button>
+                <button onclick="scrollToSection('brindes')" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">Brindes</button>
+                <button onclick="scrollToSection('chapelaria')" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">Chapelaria</button>
+                <button onclick="scrollToSection('personagens')" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">Personagens</button>
+                <button onclick="scrollToSection('missao')" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">Missão</button>
                 <button onclick="scrollToSection('idealizadora')" class="nav-link text-slate-300 hover:text-white transition-colors duration-300">Idealizadora</button>
-                <button onclick="scrollToSection('contato')" class="bg-red-600 text-white px-5 py-2 rounded-full hover:bg-red-700 transition-colors shadow-lg">Contato</button>
+                <button onclick="scrollToSection('contato')" class="bg-red-600 text-white px-5 py-2 rounded-full hover:bg-red-700 transition-colors shadow-lg whitespace-nowrap">Contato</button>
             </nav>
 
             <!-- Botão Mobile -->
-            <button id="mobile-btn" class="md:hidden text-white transition-colors duration-300 text-2xl" onclick="toggleMenu()">
+            <button id="mobile-btn" class="lg:hidden text-white transition-colors duration-300 text-2xl" onclick="toggleMenu()">
                 <i class="fa-solid fa-bars" id="menu-icon"></i>
             </button>
         </div>
 
         <!-- Menu Mobile (Escondido por padrão) -->
-        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-xl py-4 px-4 flex-col gap-4 md:hidden border-t border-slate-100">
-            <button onclick="scrollToSection('sobre')" class="text-left py-3 text-slate-800 font-medium border-b border-slate-100 w-full">Sobre</button>
-            <button onclick="scrollToSection('diversidade')" class="text-left py-3 text-slate-800 font-medium border-b border-slate-100 w-full">Diversidade</button>
-            <button onclick="scrollToSection('atuacao')" class="text-left py-3 text-slate-800 font-medium border-b border-slate-100 w-full">Como Atuamos</button>
-            <button onclick="scrollToSection('idealizadora')" class="text-left py-3 text-slate-800 font-medium border-b border-slate-100 w-full">Idealizadora</button>
-            <button onclick="scrollToSection('contato')" class="text-left py-3 text-red-600 font-bold w-full">Contato</button>
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-white shadow-xl py-4 px-4 flex-col gap-2 lg:hidden border-t border-slate-100 max-h-[80vh] overflow-y-auto">
+            <button onclick="scrollToSection('sobre')" class="text-left py-2 text-slate-800 font-medium border-b border-slate-100 w-full">Sobre</button>
+            <button onclick="scrollToSection('diversidade')" class="text-left py-2 text-slate-800 font-medium border-b border-slate-100 w-full">Diversidade</button>
+            <button onclick="scrollToSection('atuacao')" class="text-left py-2 text-slate-800 font-medium border-b border-slate-100 w-full">Como Atuamos</button>
+            <button onclick="scrollToSection('brindes')" class="text-left py-2 text-slate-800 font-medium border-b border-slate-100 w-full">Brindes e Manuseios</button>
+            <button onclick="scrollToSection('chapelaria')" class="text-left py-2 text-slate-800 font-medium border-b border-slate-100 w-full">Chapelaria</button>
+            <button onclick="scrollToSection('personagens')" class="text-left py-2 text-slate-800 font-medium border-b border-slate-100 w-full">Personagens e Mascotes</button>
+            <button onclick="scrollToSection('missao')" class="text-left py-2 text-slate-800 font-medium border-b border-slate-100 w-full">Nossa Missão</button>
+            <button onclick="scrollToSection('idealizadora')" class="text-left py-2 text-slate-800 font-medium border-b border-slate-100 w-full">Idealizadora</button>
+            <button onclick="scrollToSection('contato')" class="text-left py-2 text-red-600 font-bold w-full">Contato</button>
         </div>
     </header>
 
@@ -154,14 +162,14 @@
     </section>
 
     <!-- PÁGINA 5: BRINDES E MANUSEIOS -->
-    <section class="py-24 bg-white">
+    <section id="brindes" class="py-24 bg-white scroll-mt-28">
         <div class="container mx-auto px-4 md:px-8">
             <div class="flex flex-col md:flex-row gap-12 items-center">
                 <div class="md:w-1/2 grid grid-cols-2 gap-4">
                     <div class="overflow-hidden rounded-xl shadow-md"><img src="Foto_brinde1.png" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500" alt="Brinde 1" /></div>
-                    <div class="overflow-hidden rounded-xl shadow-md"><img src="Foto_brinde2.png" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500" alt="Brinde 2" /></div>
-                    <div class="overflow-hidden rounded-xl shadow-md"><img src="Foto_brinde3.png" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500" alt="Brinde 3" /></div>
-                    <div class="overflow-hidden rounded-xl shadow-md"><img src="Foto_brinde4.jpg" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500" alt="Brinde 4" /></div>
+                    <div class="overflow-hidden rounded-xl shadow-md"><img src="foto_brinde2.png" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500" alt="Brinde 2" /></div>
+                    <div class="overflow-hidden rounded-xl shadow-md"><img src="foto_brinde3.png" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500" alt="Brinde 3" /></div>
+                    <div class="overflow-hidden rounded-xl shadow-md"><img src="foto_brinde4.png" class="w-full h-48 object-cover hover:scale-110 transition-transform duration-500" alt="Brinde 4" /></div>
                 </div>
                 <div class="md:w-1/2">
                     <h2 class="text-4xl font-black text-slate-900 mb-6 uppercase tracking-tight">Brindes e Manuseios</h2>
@@ -180,7 +188,7 @@
     </section>
 
     <!-- PÁGINA 6: CHAPELARIA -->
-    <section class="py-24 bg-slate-900 text-white relative overflow-hidden flex items-center justify-center min-h-[60vh]">
+    <section id="chapelaria" class="py-24 bg-slate-900 text-white relative overflow-hidden flex items-center justify-center min-h-[60vh] scroll-mt-28">
         <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-red-600 rounded-full blur-[150px] opacity-20"></div>
         <div class="container mx-auto px-4 md:px-8 text-center max-w-4xl relative z-10">
             <h2 class="text-4xl md:text-5xl font-black mb-8 uppercase tracking-widest"><i class="fa-solid fa-shield-halved text-red-600 mr-4"></i>Chapelaria</h2>
@@ -203,7 +211,7 @@
     </section>
 
     <!-- PÁGINA 7: PERSONAGENS E MASCOTES -->
-    <section class="py-24 bg-white">
+    <section id="personagens" class="py-24 bg-white scroll-mt-28">
         <div class="container mx-auto px-4 md:px-8">
             <div class="flex flex-col md:flex-row gap-12 items-center">
                 <div class="md:w-1/2">
@@ -232,7 +240,7 @@
     </section>
 
     <!-- PÁGINA 9 e 10: MANIA DE EVENTOS (VALORES E GALERIA) -->
-    <section class="py-24 bg-red-600 text-white">
+    <section id="missao" class="py-24 bg-red-600 text-white scroll-mt-28">
         <div class="container mx-auto px-4 md:px-8 text-center">
             <img src="grande_foto_equipe.png" alt="Equipe Completa" class="rounded-2xl shadow-[0_20px_50px_rgba(0,0,0,0.4)] w-full h-[500px] object-cover mb-16" />
             
